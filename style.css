@@ -1,0 +1,21 @@
+:root {
+  --alt-bg-color: rgba(26, 30, 31, 1);
+  --main-bg-color: rgba(29, 33, 35, 1);
+  --accent-color: rgba(96, 158, 175, 1);
+  --red-heart-color: rgba(229, 82, 74, 1);
+  --secondary-color: rgba(250, 205, 102, 1);
+  --main-font-color: rgba(239, 238, 224, 1);
+    --header-font-color: rgba(255, 255, 255, 1);
+  --alt-cont-color: rgba(255, 255, 255, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+
+body {
+  background-color: var(--main-bg-color);
+}
