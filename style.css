@@ -187,11 +187,20 @@ body::-webkit-scrollbar {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 0px;
+  justify-content: flex-start;
+  gap: 30px;
   z-index: -1;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
+
+.chart-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 75%;
+  justify-content: space-between;
+}
+
 
 .top-chart h2, .section h2 {
   color: var(--main-font-color);
@@ -213,7 +222,6 @@ body::-webkit-scrollbar {
   gap: 10px;
   padding: 10px;
   border-radius: 10px;
-  height: 25%;
   position: relative;
   width: 100%;
 }
@@ -411,9 +419,57 @@ body::-webkit-scrollbar {
   .hits-text p {
     width: 80%;
   }
+  .chart-item-main {
+    transform: scale(0.85);
+    left: -20px;
+  }
+  .top-chart .chart-item-main .chart-item-like{
+    right: -20px;
+  }
   .song-controls {
     width: 60%;
   }
 }
 
 /* mobile responsiveness */
+@media(max-width: 540px) {
+  #hero-section {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+  }
+  #hero-section .hits {
+    width: 100%;
+    height: 40vh;
+  }
+  #hero-section .hits p {
+    width: 100%;
+  }
+  .top-chart {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .chart-content {
+    flex-direction: row;
+    width: 100%;
+    height: 25vh;
+    gap: 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  .top-chart .chart-item-main {
+    flex: 0 0 auto;
+    width: 60vw;
+    transform: scale(1);
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .top-chart .chart-item-main .chart-item-like {
+    right: 5%;
+  }
+}
