@@ -500,4 +500,13 @@ body::-webkit-scrollbar {
     width: 120px;
     height: 120px;
   }
+  .control-buttons svg:nth-of-type(1), 
+  .control-buttons svg:nth-of-type(4),
+  .controls-buttom, .song-volume {
+    display: none;
+  }
+
+  .play-button svg {
+    display: block;
+  }
 }
