@@ -496,4 +496,8 @@ body::-webkit-scrollbar {
   .top-chart .chart-item-main .chart-item-like {
     right: 5%;
   }
+  .release-item img {
+    width: 120px;
+    height: 120px;
+  }
 }
