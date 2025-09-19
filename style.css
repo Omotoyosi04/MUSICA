@@ -310,6 +310,7 @@ body::-webkit-scrollbar {
   font-size: var(--font-size-very-small);
   color: var(--header-font-color);
   opacity: 0.44;
+  z-index: -1;
 }
 
 /* music console */
@@ -447,20 +448,33 @@ body::-webkit-scrollbar {
   #form {
     position: relative;
     height: 40px;
+    display: flex;
+    justify-content: right;
     /* left: 50%; */
   }
   #form svg {
     position: absolute;
     left: 90%;
+    background-color: var(--main-bg-color);
+    cursor: pointer;
+    transition: transform .5s ease;
   }
   #form .search {
+    width: 50px;
     transition: width .5s ease;
+  }
+  #form svg:focus, .search:focus {
+    outline: none;
+  }
+  #form.show .search {
+    width: 50vw;
   }
   .nav-bar {
     position: fixed;
   }
   .logo {
     left: 100%;
+    display: none;
   }
   .toggle {
     cursor: pointer;
@@ -510,6 +524,9 @@ body::-webkit-scrollbar {
     transform: translateX(100%);
     transition: transform 0.5s linear;
   }
+  .nav-bar.active .logo {
+    display: block;
+  }
   .nav-bar.active .nav-option {
     width: 100%;
     transform: translate(0);
@@ -532,12 +549,11 @@ body::-webkit-scrollbar {
     gap: 20px;
     align-items: center;
   }
-    .menu-item a p {
-      color: rgba(239, 238, 224, .25);
-      font-size: var(--font-size-medium);
-      display: block;
-    }
-  
+  .menu-item a p {
+    color: rgba(239, 238, 224, .25);
+    font-size: var(--font-size-medium);
+    display: block;
+  }
   .nav-bar.active .menu-item a p {
     display: none;
   }
